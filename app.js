@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const contactRouter = require("./routes/contactRoutes.js");
-const skillsRouter = require("./routes/skillsRoutes.js")
+const skillsRouter = require("./routes/skillsRoutes.js");
+const languageRouter = require("./routes/languageRoutes.js")
 require("dotenv").config();
 const cors = require("cors")
 
@@ -14,6 +15,8 @@ app.use(cors())
 app.use(express.json())
 app.use(contactRouter)
 app.use(skillsRouter)
+app.use(languageRouter)
+
 
 // PORT //
 const PORT = process.env.PORT;
