@@ -5,6 +5,8 @@ const contactRouter = require("./routes/contactRoutes.js");
 const skillsRouter = require("./routes/skillsRoutes.js");
 const languageRouter = require("./routes/languageRoutes.js")
 const loisirsRouter = require("./routes/loisirsRoutes.js")
+const formationsRouter = require("./routes/formationRoutes.js")
+const experiencesRouter = require("./routes/experiencesRoutes.js")
 require("dotenv").config();
 const cors = require("cors")
 
@@ -18,7 +20,8 @@ app.use(contactRouter)
 app.use(skillsRouter)
 app.use(languageRouter)
 app.use(loisirsRouter)
-
+app.use(formationsRouter)
+app.use(experiencesRouter)
 // PORT //
 const PORT = process.env.PORT;
 

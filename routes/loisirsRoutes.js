@@ -21,6 +21,15 @@ router.get("/loisirs", async (req, res) => {
     }
   });
 });
+router.delete("/loisirs/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedLoisir = await loisirsModel.findByIdAndDelete(id);
+    res.status(200).json(deletedLoisir);
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).json({ message: err.message });
+  }
+});
 
-
-module.exports = router
+module.exports = router;
